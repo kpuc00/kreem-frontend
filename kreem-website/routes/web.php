@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//User Routes start
+Route::get('user/{user}', 'UsersController@show')->name('user.show');
+
+Route::get('user/{user}/edit', 'UsersController@edit')->name('user.edit');
+
+Route::patch('user/{user}', 'UsersController@update')->name('user.update');
+//User Routes end
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
