@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/schedule', 'ScheduleController@index');
+
+Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
+Route::patch('/password/change', 'Auth\ChangePasswordController@update');
