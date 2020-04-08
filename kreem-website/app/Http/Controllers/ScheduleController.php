@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\UserReady;
 use App\User;
 use DateInterval;
 use DateTime;
@@ -10,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(UserReady::class);
+    }
+
+
     public function index(){
 
         $startCalendar = new DateTime('first day of this month');

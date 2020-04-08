@@ -11,7 +11,7 @@
                         <form method="POST" action="{{ route('password.change') }}">
                             @csrf
                             @method('patch')
-
+                            <input type="hidden" name="redirectTo" value="{{ \Illuminate\Support\Facades\Session::get('redirectTo', 'home') }}">
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right"> Current password </label>
 

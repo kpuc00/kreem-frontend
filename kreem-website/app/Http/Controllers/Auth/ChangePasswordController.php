@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\Console\Input\Input;
 
 class ChangePasswordController extends Controller
@@ -19,6 +21,7 @@ class ChangePasswordController extends Controller
         $data = request()->validate([
             'old-password' => 'required',
             'new-password' => 'required|confirmed',
+            'redirectTo' => '',
         ]);
 
         if($this->passwordMatchesCurrentUser($data['old-password'])){
@@ -26,10 +29,10 @@ class ChangePasswordController extends Controller
         }
 
         Auth::user()->password_hash = bcrypt($data['new-password']);
+        Auth::user()->password_changed_at = new DateTime();
         Auth::user()->save();
 
-
-        return redirect('home');
+        return redirect( $data['redirectTo'] );
     }
 
     private function passwordMatchesCurrentUser($password){
