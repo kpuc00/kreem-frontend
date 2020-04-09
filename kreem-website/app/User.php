@@ -46,6 +46,10 @@ class User extends Authenticatable
         return $this->password_hash;
     }
 
+    public function setPasswordAttribute($value){
+        $this->password_hash = $value;
+    }
+
     public function username()
     {
         return 'email';
