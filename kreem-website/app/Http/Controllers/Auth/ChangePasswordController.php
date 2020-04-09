@@ -28,8 +28,7 @@ class ChangePasswordController extends Controller
             return back()->withErrors(['old-password' => 'Password is wrong'])->withInput();
         }
 
-        Auth::user()->password_hash = bcrypt($data['new-password']);
-        Auth::user()->password_changed_at = new DateTime();
+        Auth::user()->password = bcrypt($data['new-password']);
         Auth::user()->save();
 
         return redirect( $data['redirectTo'] );
