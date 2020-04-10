@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import './variables';
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    .wrapper {
+        display: flex;
+        min-width: 100%;
+        align-items: stretch;
+        .sidebar {
+            background-color: $primary-500;
+            min-width: 100%;
+            min-height: 100vh;
+            ul {
+                margin-top: 60%;
+                list-style: none;
+                li {
+                    padding-bottom: 20px;
+                    a {
+                        color: $enabled-color;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .h5 {
+                padding-left: 14px;
+            }
+            .fa-user-edit, .fa-user {
+                font-size: 24px;
+            }
+        }
+    }
+    .top-nav {
+        @include flex-align-center();
+        min-width: 100%;
+        min-height: 135px;
+        box-shadow: $dp-01;
+    }
+    .avatar-wrapper {
+        width: 255px;
+        #change-picture {
+            position: relative;
+            left: 180px;
+            bottom: 250px;
+            border-style: none;
+            background: transparent;
+        }
+    }
+    .edit-form-wrapper {
+        width: 647px;
+        box-shadow: $dp-00;
+        .change {
+            border-style: none;
+            background: transparent;
+            padding: 0;
+        }
+        .h6 {
+            color: $on-surface-disabled-color;
+        }
+        .h6-prompt {
+            color: $primary-500;
+            text-decoration: underline;
+            text-decoration-color: $primary-500;
+        }
+    }
+}
+.border-bottom {
+    border-bottom: $separation-line;
+}
+.p-20px {
+    padding: 20px;
+}
+.h6 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+.h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+.h2 {
+    color: $enabled-color;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.h1 {
+    color: $primary-200;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 60px;
+}
