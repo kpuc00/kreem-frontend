@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Media Bazaar Login')
+
 @section('styles')
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 @endsection
