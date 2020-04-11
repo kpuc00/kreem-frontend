@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body .wrapper .sidebar {
+  background-color: #01A299;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+body .wrapper .sidebar ul {
+  margin-top: 60%;
+  list-style: none;
+}
+
+body .wrapper .sidebar ul li {
+  padding-bottom: 20px;
+}
+
+body .wrapper .sidebar ul li a {
+  color: #FFFFFF;
+}
+
+body .wrapper .sidebar ul li a:hover {
+  text-decoration: none;
+}
+
+body .wrapper .sidebar .h5 {
+  padding-left: 14px;
+}
+
+body .wrapper .sidebar .fa-user-edit, body .wrapper .sidebar .fa-user {
+  font-size: 24px;
+}
+
+body .top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 100%;
+  min-height: 135px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+}
+
+body .avatar-wrapper {
+  width: 255px;
+}
+
+body .avatar-wrapper #change-picture {
+  position: relative;
+  left: 180px;
+  bottom: 250px;
+  border-style: none;
+  background: transparent;
+}
+
+body .edit-form-wrapper {
+  width: 647px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body .edit-form-wrapper .change {
+  border-style: none;
+  background: transparent;
+  padding: 0;
+}
+
+body .edit-form-wrapper .h6 {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+body .edit-form-wrapper .h6-prompt {
+  color: #01A299;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #01A299;
+          text-decoration-color: #01A299;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+}
+
+.p-20px {
+  padding: 20px;
+}
+
+.h6 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.h2 {
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.h1 {
+  color: #03DAC5;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 60px;
+}
+/*# sourceMappingURL=styles.css.map */

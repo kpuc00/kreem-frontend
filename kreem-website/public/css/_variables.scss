@@ -1,0 +1,19 @@
+// colors
+$primary-500: #01A299;
+$primary-200: #03DAC5;
+$form-color: rgba(0, 0, 0, 0.87);
+$nav-color: #FFFFFF;
+$on-surface-disabled-color: rgba(0, 0, 0, 0.38);
+$disabled-color: rgba(255, 255, 255, 0.38);
+$enabled-color: #FFFFFF;
+
+// lines
+$separation-line: 1px solid rgba(0, 0, 0, 0.38);
+
+// shadows
+$dp-06: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+$dp-01: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+$dp-00: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+// border radius
+$radius-1: 1px;
