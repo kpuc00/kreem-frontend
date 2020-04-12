@@ -20,7 +20,7 @@
     <div class="container-fluid p-0">
         <div class="row w-100 m-0">
             <div class="col-2 pl-0">
-                <div class="wrapper">
+                <div class="wrapper h-100">
                     <!-- Sidebar -->
                     <nav class="sidebar">
                         <ul class="p-0">
