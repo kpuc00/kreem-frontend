@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/schedule', 'ScheduleController@index');
 Route::get('/edit', function() {
     return view('edit');
 });
+
+Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
+Route::patch('/password/change', 'Auth\ChangePasswordController@update');
+
