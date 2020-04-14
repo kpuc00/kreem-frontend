@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/schedule', 'ScheduleController@index');
+Route::get('/json/schedule', 'ScheduleController@index');
 
 Route::get('/edit', function() {
     return view('edit');

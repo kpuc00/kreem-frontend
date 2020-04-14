@@ -29,10 +29,20 @@ class ScheduleController extends Controller
             ->where('date', '>=', $startCalendarString)
             ->where('date', '<', $endCalendar)
             ->sortBy('date')
-            ->load('type');
+            ->load('type')
+            ->toArray()
+            ;
 
-        foreach ($shifts as $shift) {
-            echo $shift->type->name . ' ' . $shift->date . '<br/>';
-        }
+        $shifts = array_values($shifts);
+        $shifts = array_map(
+            function($row){
+            return [
+                'date' => $row['date'],
+                'shift' =>  $row['type']
+            ];
+        } , $shifts);
+
+
+        return json_encode($shifts, JSON_OBJECT_AS_ARRAY);
     }
 }
