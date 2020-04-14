@@ -5,44 +5,44 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-body .wrapper {
+body .sidebar-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
   min-width: 100%;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 
-body .wrapper .sidebar {
+body .sidebar-wrapper .sidebar {
   background-color: #01A299;
   min-width: 100%;
-  min-height: 100vh;
 }
 
-body .wrapper .sidebar ul {
+body .sidebar-wrapper .sidebar ul {
   margin-top: 60%;
   list-style: none;
 }
 
-body .wrapper .sidebar ul li {
+body .sidebar-wrapper .sidebar ul li {
   padding-bottom: 20px;
 }
 
-body .wrapper .sidebar ul li a {
+body .sidebar-wrapper .sidebar ul li a {
   color: #FFFFFF;
 }
 
-body .wrapper .sidebar ul li a:hover {
+body .sidebar-wrapper .sidebar ul li a:hover {
   text-decoration: none;
 }
 
-body .wrapper .sidebar .h5 {
+body .sidebar-wrapper .sidebar .h5 {
   padding-left: 14px;
 }
 
-body .wrapper .sidebar .fa-user-edit, body .wrapper .sidebar .fa-user {
+body .sidebar-wrapper .sidebar .fa-user-edit, body .sidebar-wrapper .sidebar .fa-user {
   font-size: 24px;
 }
 
@@ -60,13 +60,13 @@ body .top-nav {
 }
 
 body .avatar-wrapper {
-  width: 255px;
+  width: 200px;
 }
 
 body .avatar-wrapper #change-picture {
   position: relative;
-  left: 180px;
-  bottom: 250px;
+  left: 139px;
+  bottom: 196px;
   border-style: none;
   background: transparent;
 }
@@ -94,12 +94,77 @@ body .edit-form-wrapper .h6-prompt {
           text-decoration-color: #01A299;
 }
 
+body .h5 {
+  text-align: center;
+}
+
+body .subtitle1 {
+  text-align: center;
+}
+
+body .divider {
+  display: block;
+  height: 1px;
+  width: 90%;
+  border: 0.5px solid #000000;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+}
+
+body .information-card {
+  height: 85vh;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
+body .information-card .profile-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-self: start;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+body .information-card .profile-information p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 5%;
+}
+
+body .calendar {
+  height: 85vh;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
 .border-bottom {
   border-bottom: 1px solid rgba(0, 0, 0, 0.38);
 }
 
 .p-20px {
   padding: 20px;
+}
+
+.subtitle1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .h6 {

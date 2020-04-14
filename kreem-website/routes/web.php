@@ -24,3 +24,6 @@ Route::get('/edit', function() {
 Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::patch('/password/change', 'Auth\ChangePasswordController@update');
 
+Route::get('/profile', function() {
+    return view('profile');
+});

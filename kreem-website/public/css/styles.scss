@@ -10,14 +10,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    .wrapper {
+    .sidebar-wrapper {
         display: flex;
+        height: 100vh;
         min-width: 100%;
         align-items: stretch;
         .sidebar {
             background-color: $primary-500;
             min-width: 100%;
-            min-height: 100vh;
             ul {
                 margin-top: 60%;
                 list-style: none;
@@ -46,11 +46,11 @@ body {
         box-shadow: $dp-01;
     }
     .avatar-wrapper {
-        width: 255px;
+        width: 200px;
         #change-picture {
             position: relative;
-            left: 180px;
-            bottom: 250px;
+            left: 139px;
+            bottom: 196px;
             border-style: none;
             background: transparent;
         }
@@ -72,12 +72,51 @@ body {
             text-decoration-color: $primary-500;
         }
     }
+    .h5 {
+        text-align: center;
+    }
+    .subtitle1 {
+        text-align: center;
+    }
+    .divider {
+        display: block;
+        height: 1px;
+        width: 90%;
+        border: 0.5px solid #000000;
+        box-shadow: $dp-01;
+    }
+    .information-card {
+        height: 85vh;
+        box-shadow: $dp-06;
+        .profile-information {
+            display: flex;
+            flex-direction: column;
+            justify-self: start;
+            align-self: start;
+            p {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: flex-start;
+                padding-left: 5%;
+            }
+        }
+    }
+    .calendar {
+        height: 85vh;
+        box-shadow: $dp-06;
+    }
 }
 .border-bottom {
     border-bottom: $separation-line;
 }
 .p-20px {
     padding: 20px;
+}
+.subtitle1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
 }
 .h6 {
     font-style: normal;
