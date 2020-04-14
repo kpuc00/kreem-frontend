@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="row">
-    <div class="col-12 d-flex justify-content-center mx-auto">
-        <div class="avatar-wrapper mt-5 ">
+    <div class="col-12 d-flex justify-content-center mx-auto mt-3">
+        <div class="avatar-wrapper">
             <img src="img/account-sketch.svg" alt="" class="profile-picture">
             <button id="change-picture">
                 <img src="/img/edit-minibutton.svg" />

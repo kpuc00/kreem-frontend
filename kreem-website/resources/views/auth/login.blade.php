@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-<div class="login">
 
     <p class="login-title">Log in</p>
 
@@ -48,6 +47,5 @@
             </a>
         @endif
     </form>
-
-</div>
+    
 @endsection
