@@ -24,3 +24,6 @@ Route::get('/schedule', 'ScheduleController@index');
 Route::get('/edit', function() {
     return view('edit');
 });
+Route::get('/profile', function() {
+    return view('profile');
+});
