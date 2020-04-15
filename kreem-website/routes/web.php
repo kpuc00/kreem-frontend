@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/json/schedule', 'ScheduleController@index');
 
 Route::get('/edit', function() {
     return view('edit');
@@ -27,4 +26,10 @@ Route::patch('/password/change', 'Auth\ChangePasswordController@update');
 
 Route::get('/profile', function() {
     return view('profile');
+});
+
+Route::prefix('json')->group(function (){
+    Route::get('schedule', 'ScheduleController@index');
+    Route::get('schedule/{date}', 'ScheduleController@index');
+
 });

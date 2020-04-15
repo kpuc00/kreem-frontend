@@ -8,6 +8,7 @@ use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ScheduleController extends Controller
 {
@@ -17,11 +18,20 @@ class ScheduleController extends Controller
     }
 
 
-    public function index(){
+    public function index($date = null ){
 
-        $startCalendar = new DateTime('first day of this month');
+        try {
+            $date = new DateTime($date ?? 'now');
+        } catch (\Exception $e) {
+            throw new BadRequestHttpException("Date format is not supported, try yyyy-mm-dd, Michael. Pfff.. frontenders");
+        }
+
+        $startCalendar = new DateTime($date->format('yy-m-d'));
+        $startCalendar->modify('first day of this month');
         $startCalendar->modify('Monday this week');
         $startCalendarString = $startCalendar->format('yy-m-d');
+
+        dd($startCalendar);
 
         $endCalendar = $startCalendar->add(new DateInterval('P6W'))->format('yy-m-d');
 
