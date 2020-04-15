@@ -42,7 +42,8 @@ body .sidebar-wrapper .sidebar .h5 {
   padding-left: 14px;
 }
 
-body .sidebar-wrapper .sidebar .fa-user-edit, body .sidebar-wrapper .sidebar .fa-user {
+body .sidebar-wrapper .sidebar .fa-user-edit,
+body .sidebar-wrapper .sidebar .fa-user {
   font-size: 24px;
 }
 
@@ -177,6 +178,18 @@ body .calendar {
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
+}
+
+.h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+}
+
+.h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
 }
 
 .h2 {
