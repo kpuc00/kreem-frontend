@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\InternalAPI;
 
 use App\Http\Middleware\UserReady;
 use App\User;
@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-class ScheduleController extends Controller
+class ScheduleController extends BaseAPIController
 {
     public function __construct()
     {
@@ -38,19 +38,23 @@ class ScheduleController extends Controller
             ->where('date', '<', $endCalendar)
             ->sortBy('date')
             ->load('type')
+            ->load('blockOffs')
+            ->load('call_ins')
             ->toArray()
             ;
 
-        $shifts = array_values($shifts);
-        $shifts = array_map(
+        $response = array_values($shifts);
+        $response = array_map(
             function($row){
             return [
+                'id' => $row['id'],
                 'date' => $row['date'],
-                'shift' =>  $row['type']
+                'shift' =>  $row['type'],
+                'blockOffs' =>  $row['block_offs'],
+                'call_ins' =>  $row['call_ins'],
             ];
-        } , $shifts);
+        } , $response);
 
-
-        return json_encode($shifts, JSON_OBJECT_AS_ARRAY);
+        return $this->modelToJson($response);
     }
 }

@@ -15,11 +15,11 @@ class Shift extends Model
     }
 
     public function call_ins(){
-        return $this->hasMany(Call_In::class, 'scheduled_shit_id');
+        return $this->hasMany(Call_In::class, 'scheduled_shift_id');
     }
 
     public function blockOffs(){
-        return $this->hasMany(BlockOff::class, 'scheduled_shit_id');
+        return $this->hasMany(BlockOff::class, 'scheduled_shift_id');
     }
 }
 
