@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BlockOff extends Model
 {
     protected $table = 'block_off';
+    public $timestamps = false;
 
     protected $guarded = [];
 
