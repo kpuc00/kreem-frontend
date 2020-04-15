@@ -31,8 +31,6 @@ class ScheduleController extends Controller
         $startCalendar->modify('Monday this week');
         $startCalendarString = $startCalendar->format('yy-m-d');
 
-        dd($startCalendar);
-
         $endCalendar = $startCalendar->add(new DateInterval('P6W'))->format('yy-m-d');
 
         $shifts = Auth::user()->shifts
