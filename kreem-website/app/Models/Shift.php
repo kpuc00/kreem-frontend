@@ -14,12 +14,13 @@ class Shift extends Model
         return $this->belongsTo(ShiftType::class, 'shift_id');
     }
 
-    public function call_ins(){
+    public function callIns(){
         return $this->hasMany(CallIn::class, 'scheduled_shift_id');
     }
 
     public function blockOffs(){
         return $this->hasMany(BlockOff::class, 'scheduled_shift_id');
     }
+
 }
 

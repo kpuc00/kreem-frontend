@@ -33,13 +33,19 @@ class ScheduleController extends BaseAPIController
 
         $endCalendar = $startCalendar->add(new DateInterval('P6W'))->format('yy-m-d');
 
-        $shifts = Auth::user()->shifts
+        $user = Auth::user();
+
+        $filterByCurrentUser = function($query) {
+            $query->where('user_id', '=', Auth::user()->id);
+        };
+
+        $shifts = $user->shifts
             ->where('date', '>=', $startCalendarString)
             ->where('date', '<', $endCalendar)
             ->sortBy('date')
             ->load('type')
-            ->load('blockOffs')
-            ->load('call_ins')
+            ->load(['blockOffs' => $filterByCurrentUser ])
+            ->load(['callIns' => $filterByCurrentUser ])
             ->toArray()
             ;
 
@@ -49,9 +55,9 @@ class ScheduleController extends BaseAPIController
             return [
                 'id' => $row['id'],
                 'date' => $row['date'],
-                'shift' =>  $row['type'],
-                'blockOffs' =>  $row['block_offs'],
-                'call_ins' =>  $row['call_ins'],
+                'type' =>  $row['type'],
+                'blockOff' =>  $row['block_offs'][0] ?? null,
+                'callIn' =>  $row['call_ins'][0] ?? null,
             ];
         } , $response);
 
