@@ -5,9 +5,13 @@ namespace App\Http\Controllers\InternalAPI;
 use App\Http\Controllers\Controller;
 use App\Http\Middleware\UserReady;
 use App\Models\BlockOff;
+use App\Models\CallIn;
 use App\Models\Shift;
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AvailabilityController extends BaseAPIController
 {
@@ -24,8 +28,46 @@ class AvailabilityController extends BaseAPIController
         try {
             return $user->blockOffs()->save($blockOff);
         }catch (QueryException  $ex){
-            return response($ex->errorInfo, 400);
+            return $this->badRequest($ex->errorInfo);
         }
+
+   }
+
+   public function removeBlockOffFromShift(int $shift){
+        $authUser = Auth::user();
+
+        BlockOff::query()
+            ->where('user_id', '=', $authUser->id)
+            ->where('scheduled_shift_id', '=', $shift)
+            ->delete()
+            ;
+
+        return $this->noContent();
+   }
+
+   public function callInForShift(int $shift, Request $request){
+
+       try {
+           $data = $request->validate([
+               'reason' => 'required',
+           ]);
+       }catch (ValidationException $ex){
+           return $this->badRequest($ex->errors());
+       }
+
+
+        $callIn = new CallIn($data);
+        $callIn->shift()->associate(new Shift(['id' => $shift]));
+        $callIn->user()->associate(Auth::user());
+
+
+       try {
+          $callIn->save();
+          $callIn->unsetRelation('user');
+          return $callIn;
+       }catch (QueryException  $ex){
+           return $this->badRequest($ex->errorInfo);
+       }
 
    }
 }

@@ -10,4 +10,12 @@ class BaseAPIController extends Controller
         $content = json_encode($model, JSON_OBJECT_AS_ARRAY);
         return response($content)->header('Content-Type', 'application/json');
     }
+
+    protected function noContent(){
+        return response()->noContent();
+    }
+
+    protected function badRequest($content){
+        return response($content, 400);
+    }
 }

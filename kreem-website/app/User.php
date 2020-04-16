@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Models\BlockOff;
-use App\Models\Call_In;
+use App\Models\CallIn;
 use App\Models\Shift;
 use DateTime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -65,7 +65,7 @@ class User extends Authenticatable
     }
 
     public function call_ins(){
-        return $this->hasMany(Call_In::class, 'user_id');
+        return $this->hasMany(CallIn::class, 'user_id');
     }
 
     public function blockOffs(){

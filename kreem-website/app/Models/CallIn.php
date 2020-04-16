@@ -5,7 +5,7 @@ namespace App\Models;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class Call_In extends Model
+class CallIn extends Model
 {
     protected $table = 'call_in';
     public $timestamps = false;
