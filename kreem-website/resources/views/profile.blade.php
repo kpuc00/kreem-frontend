@@ -1,4 +1,7 @@
 @extends('layouts.layout')
+
+@section('placeholder', 'My profile')
+
 @section('content')
 <div class="row">
     <div class="col-3 mt-3 p-0">
