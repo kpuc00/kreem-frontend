@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 body .card-header {
@@ -7,11 +8,29 @@ body .card-header {
 
 body table {
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  width: 100%;
 }
 
-body table td:hover {
+body table td {
+  width: 14%;
+  height: 80px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  vertical-align: middle;
+}
+
+body table td:not(:empty):hover {
   cursor: pointer;
   background-color: rgba(119, 119, 119, 0.6);
+  font-size: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body table td:not(:empty):hover:after {
+  content: "🌄🌞🌙😷";
+  font-size: 0.9rem;
 }
 
 body {
@@ -58,7 +77,8 @@ body .sidebar-wrapper .sidebar .h5 {
 }
 
 body .sidebar-wrapper .sidebar .fa-user-edit,
-body .sidebar-wrapper .sidebar .fa-user {
+body .sidebar-wrapper .sidebar .fa-user,
+body .sidebar-wrapper .sidebar .fa-sign-out-alt {
   font-size: 24px;
 }
 
@@ -220,5 +240,17 @@ body .calendar {
   font-style: normal;
   font-weight: 300;
   font-size: 60px;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: unset;
+  color: #01A299;
+  font-size: 16px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 /*# sourceMappingURL=styles.css.map */

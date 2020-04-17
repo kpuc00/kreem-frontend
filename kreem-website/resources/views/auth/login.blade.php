@@ -2,13 +2,9 @@
 
 @section('title', 'Media Bazaar Login')
 
-@section('styles')
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-@endsection
-
 @section('content')
 
-    <p class="login-title">Log in</p>
+    <p class="title">Log in</p>
 
     <form method="POST" action="{{ route('login') }}" >
         @csrf

@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     @yield('styles')
     
 </head>
@@ -27,7 +28,7 @@
             
             <div class="col-5 m-0 p-0">
                 <div class="leftside-wrapper">
-                    <img class="logo-small m-0" src="images/Logo-small.svg">
+                    <img class="logo-small m-0" src="../images/Logo-small.svg">
                     <div class="col-5 position-fixed">
                         <h3 class="h3 m-0 pt-5">Media Bazaar</h3>
                         <h4 class="h4 m-0 pt-3 pb-5">Employee view</h4>
