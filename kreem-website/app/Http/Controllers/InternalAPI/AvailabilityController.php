@@ -64,15 +64,16 @@ class AvailabilityController extends BaseAPIController
 
    }
 
-   public function removeBlockOffFromShift(int $shift){
+   public function removeBlockOffFromShift(int $id){
         $authUser = Auth::user();
 
+        //filter on both columns to make sure that a user can only
+        //delete their own Block Offs
         BlockOff::query()
             ->where('user_id', '=', $authUser->id)
-            ->where('scheduled_shift_id', '=', $shift)
+            ->where('id', '=', $id)
             ->delete()
             ;
-
         return $this->noContent();
    }
 
