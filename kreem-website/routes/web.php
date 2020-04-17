@@ -23,7 +23,25 @@ Route::get('/edit', 'UsersController@edit')->name('user.edit');
 
 Route::patch('update/{user}', 'UsersController@update')->name('user.update');
 
+=======
+
+Route::get('/edit', function() {
+    return view('edit');
+});
+>>>>>>> develop
 
 Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::patch('/password/change', 'Auth\ChangePasswordController@update');
 
+Route::get('/profile', function() {
+    return view('profile');
+});
+
+Route::prefix('json')->group(function (){
+    Route::get('schedule', 'InternalAPI\ScheduleController@index');
+    Route::get('schedule/{date}', 'InternalAPI\ScheduleController@index');
+    Route::post('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@blockOffShift');
+    Route::delete('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@removeBlockOffFromShift');
+    Route::post('shifts/{shift}/callins', 'InternalAPI\AvailabilityController@callInForShift');
+
+});

@@ -2,8 +2,9 @@
 
 namespace App;
 
+use App\Models\BlockOff;
+use App\Models\CallIn;
 use App\Models\Shift;
-use App\Models\ShiftAssignment;
 use DateTime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -22,9 +23,6 @@ class User extends Authenticatable
      */
 
     protected $guarded = [];
-    // protected $fillable = [
-    //     'first_name', 'last_name', 'email', 'password',
-    // ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -62,11 +60,15 @@ class User extends Authenticatable
         return 'email';
     }
 
-    public function assignedShifts(){
-        return $this->hasMany(ShiftAssignment::class);
-    }
-
     public function shifts(){
         return $this->belongsToMany(Shift::class, 'user_scheduled_shift', 'user_id','scheduled_shift_id');
+    }
+
+    public function call_ins(){
+        return $this->hasMany(CallIn::class, 'user_id');
+    }
+
+    public function blockOffs(){
+        return $this->hasMany(BlockOff::class, 'user_id');
     }
 }

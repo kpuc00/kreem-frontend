@@ -7,6 +7,7 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Styles -->
@@ -19,20 +20,20 @@
 <body>
     <div class="container-fluid p-0">
         <div class="row w-100 m-0">
-            <div class="col-2 pl-0">
-                <div class="wrapper h-100">
+            <div class="col-2 pl-0 h-100">
+                <div class="sidebar-wrapper">
                     <!-- Sidebar -->
                     <nav class="sidebar">
                         <ul class="p-0">
                             <h2 class="h2 pl-3">PERSONAL</h2>
                             <li class="pl-5 pt-5">
-                                <a href="#" class="d-flex">
+                                <a href="/profile" class="d-flex">
                                     <i class="fas fa-user"></i>
                                     <h5 class="h5">My profile</h5>
                                 </a>
                             </li>
                             <li class="pl-5">
-                                <a href="#" class="d-flex">
+                                <a href="/edit" class="d-flex">
                                     <i class="fas fa-user-edit"></i>
                                     <h5 class="h5 pl-1">Edit profile</h5>
                                 </a>
@@ -56,5 +57,7 @@
             </div>
         </div>
     </div>
+    <script src="/js/script.js"></script>
+
 </body>
 </html>
