@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('placeholder', 'Edit profile')
+@section('page_title', 'Edit profile')
 
 @section('content')
 <div class="row">

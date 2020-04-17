@@ -29,9 +29,9 @@
                 <div class="leftside-wrapper">
                     <img class="logo-small m-0" src="images/Logo-small.svg">
                     <div class="col-5 position-fixed">
-                        <h3 class="m-0 pt-5">Media Bazaar</h3>
-                        <h4 class="m-0 pt-3 pb-5">Employee view</h4>
-                        <h5 class="text m-0 pt-5">The place where employees can check their stats and information</h5>
+                        <h3 class="h3 m-0 pt-5">Media Bazaar</h3>
+                        <h4 class="h4 m-0 pt-3 pb-5">Employee view</h4>
+                        <h5 class="h5 text m-0 pt-5">The place where employees can check their stats and information</h5>
                     </div>
                     
                 </div>

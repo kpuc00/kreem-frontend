@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import './variables';
 @import './calendar-style';
-
 @mixin flex-align-center {
     display: flex;
     align-items: center;
@@ -132,20 +131,21 @@ body {
 
 .h5 {
     font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 50px;
 }
 
 .h4 {
     font-style: normal;
-    font-weight: normal;
-    font-size: 34px;
+    font-weight: 400;
+    font-size: 30px;
 }
 
 .h3 {
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 40px;
 }
 
 .h2 {

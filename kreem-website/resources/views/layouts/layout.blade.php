@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-12 p-0">
                         <div class="top-nav mt-1">
-                            <h1 class="h1 mb-0 pl-4">@yield('placeholder')</h1>
+                            <h1 class="h1 mb-0 pl-4">@yield('page_title')</h1>
                         </div>
                     </div>
                 </div>
