@@ -1,0 +1,75 @@
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.background {
+    z-index: -1;
+}
+
+.Logo-small {
+    position: absolute;
+    padding: 20px;
+    background-color: white;
+    border-radius: 50%;
+    width: 102px;
+    height: 101px;
+    margin: 20% 37.5%;
+    z-index: 2;
+}
+
+.title {
+    color: #F2E7FE;
+    max-width: max-content;
+    margin: 20px auto 0;
+    font-size: 30px;
+    line-height: 56px;
+}
+
+.emp-view {
+    color: #F2E7FE;
+    max-width: max-content;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.text {
+    color: #F2E7FE;
+    max-width: 33%;
+    margin: 134px auto 0;
+    text-align: center;
+    line-height: 35px;
+}
+
+.login {
+    margin: auto 5%;
+    max-height: 200px;
+}
+
+.login-title {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-weight: 350;
+    font-size: 40px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #000000;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-radius: unset;
+    color: #01A299;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    padding-right: 30px;
+}
