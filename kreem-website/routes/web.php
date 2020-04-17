@@ -31,6 +31,7 @@ Route::get('/profile', function() {
 Route::prefix('json')->group(function (){
     Route::get('schedule', 'InternalAPI\ScheduleController@index');
     Route::get('schedule/{date}', 'InternalAPI\ScheduleController@index');
+
     Route::post('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@blockOffShift');
     Route::delete('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@removeBlockOffFromShift');
     Route::post('shifts/{shift}/callins', 'InternalAPI\AvailabilityController@callInForShift');

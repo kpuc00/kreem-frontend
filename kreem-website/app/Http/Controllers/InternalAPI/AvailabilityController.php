@@ -20,10 +20,10 @@ class AvailabilityController extends BaseAPIController
         $this->middleware(UserReady::class);
     }
 
-    public function blockOffShift(int $shift){
+    public function blockOffShift(int $shift_id){
         $user = Auth::user();
         $blockOff = new BlockOff();
-        $blockOff->shift()->associate(new Shift(['id' => $shift]));
+        $blockOff->shift()->associate(new Shift(['id' => $shift_id]));
 
         try {
             return $user->blockOffs()->save($blockOff);
@@ -45,21 +45,19 @@ class AvailabilityController extends BaseAPIController
         return $this->noContent();
    }
 
-   public function callInForShift(int $shift, Request $request){
+   public function callInForShift(int $shift_id, Request $request){
 
        try {
-           $data = $request->validate([
+           $request_data = $request->validate([
                'reason' => 'required',
            ]);
        }catch (ValidationException $ex){
            return $this->badRequest($ex->errors());
        }
 
-
-        $callIn = new CallIn($data);
-        $callIn->shift()->associate(new Shift(['id' => $shift]));
+        $callIn = new CallIn($request_data);
+        $callIn->shift()->associate(new Shift(['id' => $shift_id]));
         $callIn->user()->associate(Auth::user());
-
 
        try {
           $callIn->save();

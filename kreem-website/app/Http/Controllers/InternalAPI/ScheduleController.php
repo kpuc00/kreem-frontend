@@ -49,8 +49,8 @@ class ScheduleController extends BaseAPIController
             ->toArray()
             ;
 
-        $response = array_values($shifts);
-        $response = array_map(
+        $response_data = array_values($shifts);
+        $response_data = array_map(
             function($row){
             return [
                 'id' => $row['id'],
@@ -59,8 +59,8 @@ class ScheduleController extends BaseAPIController
                 'blockOff' =>  $row['block_offs'][0] ?? null,
                 'callIn' =>  $row['call_ins'][0] ?? null,
             ];
-        } , $response);
+        } , $response_data);
 
-        return $this->modelToJson($response);
+        return $this->modelToJson($response_data);
     }
 }
