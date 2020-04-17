@@ -17,9 +17,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/schedule', 'ScheduleController@index');
-Route::get('/edit', function() {
-    return view('edit');
-});
+
+//User routes
+Route::get('/edit', 'UsersController@edit')->name('user.edit');
+
+Route::patch('update/{user}', 'UsersController@update')->name('user.update');
+
 
 Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::patch('/password/change', 'Auth\ChangePasswordController@update');
