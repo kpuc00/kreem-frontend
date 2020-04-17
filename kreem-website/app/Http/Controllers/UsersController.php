@@ -49,8 +49,8 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-
-        return view('user.show', compact('user'));
+        $user = Auth::user();
+        return view('user.profile', compact('user'));
     }
 
     /**
@@ -62,7 +62,7 @@ class UsersController extends Controller
     public function edit(User $user)
     {
         $user = Auth::user();
-        return view('edit', compact('user'));
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -81,12 +81,9 @@ class UsersController extends Controller
             'phone_number' => 'required',
         ]);
 
-
-
-
         $user->update($validatedData);
 
-        return back(); //view('user.show', compact('user'))
+        return back();
     }
 
     /**

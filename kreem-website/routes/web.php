@@ -19,23 +19,15 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/schedule', 'ScheduleController@index');
 
 //User routes
+Route::get('/profile', 'UsersController@show')->name('user.show');
+
 Route::get('/edit', 'UsersController@edit')->name('user.edit');
 
 Route::patch('update/{user}', 'UsersController@update')->name('user.update');
 
-=======
-
-Route::get('/edit', function() {
-    return view('edit');
-});
->>>>>>> develop
 
 Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::patch('/password/change', 'Auth\ChangePasswordController@update');
-
-Route::get('/profile', function() {
-    return view('profile');
-});
 
 Route::prefix('json')->group(function (){
     Route::get('schedule', 'InternalAPI\ScheduleController@index');

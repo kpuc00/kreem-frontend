@@ -25,15 +25,15 @@
                     <!-- Sidebar -->
                     <nav class="sidebar">
                         <ul class="p-0">
-                            <h2 class="h2 pl-3">PERSONAL</h2>
+                            <h2 class="h2 pl-3">profile</h2>
                             <li class="pl-5 pt-5">
-                                <a href="/profile" class="d-flex">
+                                <a href="{{ route('user.show') }}" class="d-flex">
                                     <i class="fas fa-user"></i>
                                     <h5 class="h5">My profile</h5>
                                 </a>
                             </li>
                             <li class="pl-5">
-                                <a href="/edit" class="d-flex">
+                                <a href="{{ route('user.edit') }}" class="d-flex">
                                     <i class="fas fa-user-edit"></i>
                                     <h5 class="h5 pl-1">Edit profile</h5>
                                 </a>
