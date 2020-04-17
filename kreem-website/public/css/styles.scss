@@ -35,7 +35,8 @@ body {
                 padding-left: 14px;
             }
             .fa-user-edit,
-            .fa-user {
+            .fa-user,
+            .fa-sign-out-alt {
                 font-size: 24px;
             }
         }
@@ -160,4 +161,16 @@ body {
     font-style: normal;
     font-weight: 300;
     font-size: 60px;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-radius: unset;
+    color: #01A299;
+    font-size: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    padding-right: 30px;
 }
