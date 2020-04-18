@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Media Bazaar')</title>
     
@@ -11,33 +11,39 @@
     @yield('scripts')
     
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     @yield('fonts')
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     @yield('styles')
     
 </head>
 <body>
-
-    <div class="container-fluid">
     
-        <div class="row mr-0">
-            <div class="col-5">
-                <p class="title">Media Bazaar</p>
-                <p class="emp-view">Employee view</p>
-                <p class="text">The place where employees can check their stats and information</p>
-            </div>
+    <div class="container-fluid m-0 p-0">
         
-            <img class="col-5 background" src="images/container-bg.svg">
-            <img class="Logo-small" src="images/Logo-small.svg">
-    
-            <div class="col-7 pl-5 pr-5">
-                @yield('content')
+        <div class="row m-0">
+            
+            <div class="col-5 m-0 p-0">
+                <div class="leftside-wrapper">
+                    <img class="logo-small m-0" src="../images/Logo-small.svg">
+                    <div class="col-5 position-fixed">
+                        <h3 class="h3 m-0 pt-5">Media Bazaar</h3>
+                        <h4 class="h4 m-0 pt-3 pb-5">Employee view</h4>
+                        <h5 class="h5 text m-0 pt-5">The place where employees can check their stats and information</h5>
+                    </div>
+                    
+                </div>
             </div>
-    
+            
+            <div class="col-7 m-0 p-0">
+                <div class="rightside-wrapper">
+                @yield('content')
+                </div>                
+            </div>
+                
         </div>
     
     </div>

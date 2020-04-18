@@ -1,81 +1,50 @@
-body {
-  font-family: Roboto, sans-serif;
+.leftside-wrapper {
+  background-image: url("../images/container-bg.svg");
+  background-repeat: no-repeat;
+  color: #f2e7fe;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
-.container-fluid {
-  padding: 0;
-}
-
-.background {
-  position: absolute;
-  z-index: -1;
-}
-
-.Logo-small {
-  position: absolute;
-  padding: 20px;
+.leftside-wrapper .logo-small {
+  position: relative;
+  left: 50%;
+  top: 40%;
+  padding: 15px;
   background-color: white;
   border-radius: 50%;
-  width: 102px;
-  height: 101px;
-  margin: 20% 37.5%;
-  z-index: 2;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
 }
 
-.title {
-  color: #F2E7FE;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  margin: 20px auto 0;
-  font-size: 30px;
-  line-height: 56px;
+.leftside-wrapper .text {
+  padding: 0 30%;
 }
 
-.emp-view {
-  color: #F2E7FE;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  margin: 0 auto;
-  font-size: 22px;
-  line-height: 30px;
+.rightside-wrapper {
+  margin: 0;
+  padding: 10rem 15% 0 15%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
-.text {
-  color: #F2E7FE;
-  max-width: 33%;
-  margin: 134px auto 0;
-  text-align: center;
-  line-height: 35px;
-}
-
-.login {
-  margin: auto 5%;
-  max-height: 200px;
-}
-
-.login-title {
-  margin-top: 15%;
-  margin-bottom: 15%;
-  font-weight: 350;
+.rightside-wrapper .title {
+  padding-bottom: 3rem;
+  font-weight: 300;
   font-size: 40px;
-  line-height: 24px;
   letter-spacing: 0.15px;
   color: #000000;
-}
-
-.btn-primary {
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-radius: unset;
-  color: #01A299;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  letter-spacing: 1.25px;
-  text-transform: uppercase;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 /*# sourceMappingURL=login.css.map */

@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title', 'My profile')
+
+@section('page_header', 'Edit profile')
+
 @section('content')
 <div class="row">
     <div class="col-12 d-flex justify-content-center mx-auto mt-3">

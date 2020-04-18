@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import './variables';
 @import './calendar-style';
-
 @mixin flex-align-center {
     display: flex;
     align-items: center;
@@ -35,7 +34,9 @@ body {
             .h5 {
                 padding-left: 14px;
             }
-            .fa-user-edit, .fa-user {
+            .fa-user-edit,
+            .fa-user,
+            .fa-sign-out-alt {
                 font-size: 24px;
             }
         }
@@ -108,36 +109,68 @@ body {
         box-shadow: $dp-06;
     }
 }
+
 .border-bottom {
     border-bottom: $separation-line;
 }
+
 .p-20px {
     padding: 20px;
 }
+
 .subtitle1 {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
 }
+
 .h6 {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
 }
+
 .h5 {
     font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 50px;
 }
+
+.h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+}
+
 .h2 {
     color: $enabled-color;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
 }
+
 .h1 {
     color: $primary-200;
     font-style: normal;
     font-weight: 300;
     font-size: 60px;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-radius: unset;
+    color: #01A299;
+    font-size: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    padding-right: 30px;
 }

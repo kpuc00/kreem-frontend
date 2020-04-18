@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Authenticate;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class UsersController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +54,8 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.show', compact('user'));
+        $user = Auth::user();
+        return view('user.profile', compact('user'));
     }
 
     /**
@@ -58,6 +66,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        $user = Auth::user();
         return view('user.edit', compact('user'));
     }
 
@@ -71,17 +80,15 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
 
-        $data = request()->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
+        $validatedData = $request->validate([
+            'personal_email' => 'max:255|email',
+            'address' => 'max:255',
+            'phone_number' => 'max:255',
         ]);
 
+        $user->update($validatedData);
 
-
-        $user->update($data);
-
-        return view('user.show', compact('user'));
+        return back();
     }
 
     /**

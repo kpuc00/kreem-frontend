@@ -15,25 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'UsersController@show')->name('home');
+Route::get('/schedule', 'ScheduleController@index');
 
-Route::get('/edit', function() {
-    return view('edit');
-});
+//User routes
+Route::get('/profile', 'UsersController@show')->name('user.show');
+
+Route::get('/edit', 'UsersController@edit')->name('user.edit');
+
+Route::patch('update/{user}', 'UsersController@update')->name('user.update');
+
 
 Route::get('/password/change', 'Auth\ChangePasswordController@index')->name('password.change');
 Route::patch('/password/change', 'Auth\ChangePasswordController@update');
-
-Route::get('/profile', function() {
-    return view('profile');
-});
 
 Route::prefix('json')->group(function (){
     Route::get('schedule', 'InternalAPI\ScheduleController@index');
     Route::get('schedule/{date}', 'InternalAPI\ScheduleController@index');
 
-    Route::post('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@blockOffShift');
-    Route::delete('shifts/{shift}/blockoffs', 'InternalAPI\AvailabilityController@removeBlockOffFromShift');
+    Route::post('blockoffs', 'InternalAPI\AvailabilityController@blockOffShift');
+    Route::delete('blockoffs/{id}', 'InternalAPI\AvailabilityController@removeBlockOffFromShift');
     Route::post('shifts/{shift}/callins', 'InternalAPI\AvailabilityController@callInForShift');
 
 });
