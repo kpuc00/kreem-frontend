@@ -30,8 +30,9 @@ class ChangePasswordController extends Controller
 
         Auth::user()->password = bcrypt($data['new-password']);
         Auth::user()->save();
+        $user = Auth::user();
 
-        return redirect( $data['redirectTo'] );
+        return view( 'user.profile', compact('user') );
     }
 
     private function passwordMatchesCurrentUser($password){

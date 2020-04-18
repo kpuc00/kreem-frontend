@@ -21,11 +21,11 @@
             <span class="divider mx-auto mt-3"></span>
             <div class="profile-information mt-3 subtitle1">
                 <p class="m-0">Email address</p>
-                <p class="pt-1">{{ $user->email }}</p>
+                <p class="pt-1">{{ $user->personal_email }}</p>
                 <p class="m-0">Phone</p>
                 <p class="pt-1">{{ $user->phone ?? 'no phone submited' }}</p>
                 <p class="m-0">Address</p>
-                <p class="pt-1">{{ $user->phone ?? 'no address submited' }}</p>
+                <p class="pt-1">{{ $user->address ?? 'no address submited' }}</p>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
                     </tbody>
                 </table>
 
-            
+
                 <br/>
                 <form class="form-inline">
                     <label class="lead mr-2 ml-2" for="month">Go to: </label>
@@ -89,7 +89,7 @@
                     <option value=2030>2030</option>
                     </select>
                 </form>
-            </div>   
+            </div>
         </div>
     </div>
 </div>

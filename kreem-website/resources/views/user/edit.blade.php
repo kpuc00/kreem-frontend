@@ -30,10 +30,10 @@
                 <h5 class="h5">Personal email</h5>
             </div>
             <div class="col-6">
-                <input type="text" class="h6" id="email"  name="email" value="{{ old('email') ?? $user->email }}">
+                <input type="text" class="h6" id="email"  name="personal_email" value="{{ old('personal_email') ?? $user->personal_email }}">
                 <button class="change" id="change-email" type="submit"><h6 class="h6 h6-prompt">Change email</h6></button>
-                @if($errors->has('email'))
-                    <div class="alert-warning" role="alert">{{ $errors->first('email') }}</div>
+                @if($errors->has('personal_email'))
+                    <div class="alert-warning" role="alert">{{ $errors->first('personal_email') }}</div>
                 @endif
             </div>
         </div>

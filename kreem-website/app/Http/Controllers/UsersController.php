@@ -10,6 +10,11 @@ use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class UsersController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -76,9 +81,9 @@ class UsersController extends Controller
     {
 
         $validatedData = $request->validate([
-            'email' => 'required|email',
-            'address' => 'required',
-            'phone_number' => 'required',
+            'personal_email' => 'max:255|email',
+            'address' => 'max:255',
+            'phone_number' => 'max:255',
         ]);
 
         $user->update($validatedData);
