@@ -7,7 +7,11 @@ let selectMonth = document.getElementById("month");
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 let monthAndYear = document.getElementById("monthAndYear");
+let calendar = {};
+
+
 showCalendar(currentMonth, currentYear);
+
 
 
 function next() {
@@ -29,52 +33,71 @@ function goTo() {
 }
 
 function showCalendar(month, year) {
-
-    let firstDay = (new Date(year, month)).getDay();
-    let daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-    let tbl = document.getElementById("calendar-body"); // body of the calendar
-
-    // clearing all previous cells
-    tbl.innerHTML = "";
-
     // filing data about month and in the page via DOM.
     monthAndYear.innerHTML = months[month] + " " + year;
     selectYear.value = year;
     selectMonth.value = month;
 
-    // creating all cells
-    let date = 1;
-    for (let i = 0; i < 6; i++) {
-        // creates a table row
-        let row = document.createElement("tr");
+    let currentDay = new Date(year, month);
+    let lastDay = new Date(currentDay);
 
-        //creating individual cells, filing them up with data.
-        for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay) {
-                let cell = document.createElement("td");
-                let cellText = document.createTextNode("");
-
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            }
-            else if (date > daysInMonth) {
-                break;
-            }
-
-            else {
-                let cell = document.createElement("td");
-                let cellText = document.createTextNode(date);
-
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-                date++;
-            }
+    lastDay.setMonth(lastDay.getMonth()+1);
+    refreshCalendarFromAPI(currentDay);
 
 
-        }
+    let tbl = document.getElementById("calendar-body"); // body of the calendar
+    // clearing all previous cells
+    tbl.innerHTML = "";
+    calendar={};
 
-        tbl.appendChild(row); // appending each row into calendar body.
+    let row = document.createElement("tr");
+
+    let spaces = (currentDay.getDay() + 6) % 7;
+    for(let i = 0; i< spaces; i++){
+        row.appendChild(document.createElement('td'));
     }
 
+    while(currentDay < lastDay){
+        let currentCell = document.createElement("td");
+        let dateKey = dateToISO(currentDay);
+
+        calendar[dateKey] = currentCell;
+
+        currentCell.textContent = currentDay.getDate().toString();
+        row.appendChild(currentCell);
+        if(currentDay.getDay() === 0){
+            tbl.appendChild(row);
+            row = document.createElement("tr");
+        }
+        currentDay.setDate(currentDay.getDate()+1);
+    }
+        tbl.appendChild(row);
 }
+
+//
+
+function dateToISO(date){
+    return [date.getFullYear(),
+        (date.getMonth() +1 >9 ? '' : '0') + (date.getMonth() + 1),
+        (date.getDate()>9 ? '' : '0') + date.getDate()
+    ].join('-');
+}
+
+async function refreshCalendarFromAPI(date){
+    const response = await fetch('/json/schedule/' + dateToISO(date));
+    const json = await response.json();
+
+
+    for(let i in json){
+        let shift = json[i]
+        let thisCell = calendar[shift.date];
+
+        if(thisCell === undefined)
+            continue;
+
+        thisCell.innerHTML = shift.type.name;
+    }
+
+
+}
+

@@ -35,13 +35,14 @@
                 <table class="table table-bordered" id="calendar">
                     <thead>
                         <tr>
-                            <th>Sunday</th>
                             <th>Monday</th>
                             <th>Tuesday</th>
                             <th>Wednesday</th>
                             <th>Thursday</th>
                             <th>Friday</th>
                             <th>Saturday</th>
+                            <th>Sunday</th>
+
                         </tr>
                     </thead>
 
@@ -50,7 +51,7 @@
                     </tbody>
                 </table>
 
-            
+
                 <br/>
                 <form class="form-inline">
                     <label class="lead mr-2 ml-2" for="month">Go to: </label>
@@ -84,7 +85,7 @@
                     <option value=2030>2030</option>
                     </select>
                 </form>
-            </div>   
+            </div>
         </div>
     </div>
 </div>
