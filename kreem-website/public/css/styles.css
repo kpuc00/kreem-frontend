@@ -20,6 +20,7 @@ body table td {
   vertical-align: middle;
 }
 
+/*
 body table td:not(:empty):hover {
   cursor: pointer;
   background-color: rgba(119, 119, 119, 0.6);
@@ -32,7 +33,7 @@ body table td:not(:empty):hover:after {
   content: "🌄🌞🌙😷";
   font-size: 0.9rem;
 }
-
+*/
 body {
   margin: 0;
   padding: 0;
