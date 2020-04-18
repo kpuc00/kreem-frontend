@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>@yield('title', 'Media Bazaar')</title>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -15,7 +16,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body>
     <div class="container-fluid p-0">
@@ -38,6 +38,12 @@
                                     <h5 class="h5 pl-1">Edit profile</h5>
                                 </a>
                             </li>
+                            <li class="pl-5">
+                                <a href="#" class="d-flex">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <h5 class="h5">Logout</h5>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -47,7 +53,7 @@
                 <div class="row">
                     <div class="col-12 p-0">
                         <div class="top-nav mt-1">
-                            <h1 class="h1 mb-0 pl-4">Placeholder for page</h1>
+                            <h1 class="h1 mb-0 pl-4">@yield('page_header')</h1>
                         </div>
                     </div>
                 </div>
