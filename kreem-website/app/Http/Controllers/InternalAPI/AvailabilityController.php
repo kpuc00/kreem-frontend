@@ -9,16 +9,45 @@ use App\Models\CallIn;
 use App\Models\Shift;
 use App\Models\ShiftType;
 use App\User;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class AvailabilityController extends BaseAPIController
 {
     public function __construct()
     {
         $this->middleware(UserReady::class);
+    }
+
+    public function blockOffs($date = null){
+
+        $user = Auth::user();
+
+        try {
+            $date = new DateTime($date ?? 'now');
+        } catch (\Exception $e) {
+            throw new BadRequestHttpException("Date format is not supported, try yyyy-mm-dd, Michael. Pfff.. frontenders");
+        }
+
+        $date->modify('first day of this month');
+         return BlockOff::query()
+            ->with('shift.type')
+            ->where('user_id', '=', $user->id)
+            ->whereHas('shift', function ($query) use($date){
+                $start = $date->format('yy-m-d');
+                $end = $date->add(new DateInterval('P1M'))->format('yy-m-d');
+
+                $query->whereDate('date','>=', $start)
+                      ->whereDate('date','<', $end);
+            })
+            ->get();
+
     }
 
     public function blockOffShift(Request $request){

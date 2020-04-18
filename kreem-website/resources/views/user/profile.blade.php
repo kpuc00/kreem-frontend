@@ -15,7 +15,11 @@
             <p class="subtitle1 pt-3">{{ $user->role }}</p>
             <div class="row">
                 <div class="col-12">
-                    <p class="subtitle1">{{ $user->houlry_wage ?? '0' }}<img class="pr-2"src="img/money.svg" alt=""></p>
+                    <p class="subtitle1">
+                        <img class="pr-2"src="img/money.svg" alt="">
+                        {{ $user->hourly_wage ?? '0' }}
+                        €
+                    </p>
                 </div>
             </div>
             <span class="divider mx-auto mt-3"></span>

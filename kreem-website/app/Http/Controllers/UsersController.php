@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\UserReady;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class UsersController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware(UserReady::class);
     }
 
     /**

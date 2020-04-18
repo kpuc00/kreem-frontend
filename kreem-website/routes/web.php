@@ -33,6 +33,8 @@ Route::prefix('json')->group(function (){
     Route::get('schedule', 'InternalAPI\ScheduleController@index');
     Route::get('schedule/{date}', 'InternalAPI\ScheduleController@index');
 
+    Route::get('blockoffs', 'InternalAPI\AvailabilityController@blockOffs');
+    Route::get('blockoffs/{date}', 'InternalAPI\AvailabilityController@blockOffs');
     Route::post('blockoffs', 'InternalAPI\AvailabilityController@blockOffShift');
     Route::delete('blockoffs/{id}', 'InternalAPI\AvailabilityController@removeBlockOffFromShift');
     Route::post('shifts/{shift}/callins', 'InternalAPI\AvailabilityController@callInForShift');
