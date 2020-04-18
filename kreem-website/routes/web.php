@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'UsersController@show')->name('home');
 Route::get('/schedule', 'ScheduleController@index');
 
 //User routes

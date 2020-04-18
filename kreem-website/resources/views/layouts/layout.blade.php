@@ -6,9 +6,13 @@
 
     <title>@yield('title', 'Media Bazaar')</title>
 
+     <!-- CSRF Token -->
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Styles -->
@@ -39,10 +43,16 @@
                                 </a>
                             </li>
                             <li class="pl-5">
-                                <a href="#" class="d-flex">
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt"></i>
-                                    <h5 class="h5">Logout</h5>
+                                    {{ __('Logout') }}
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
                             </li>
                         </ul>
                     </nav>
