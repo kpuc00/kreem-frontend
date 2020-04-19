@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li class="pl-5">
-                                <a href="{{ route('logout') }}"
+                                <a class="logout_btn" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt"></i>
