@@ -1,6 +1,8 @@
-
-
 @extends('layouts.layout')
+
+@section('title', 'Edit profile')
+
+@section('page_header', 'Edit profile')
 
 @section('content')
 
