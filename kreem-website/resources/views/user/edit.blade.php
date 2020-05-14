@@ -8,7 +8,7 @@
 
 <form action="{{ route('user.update', ['user' => $user]) }}" method="POST">
     @method("PATCH")
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-12 d-flex justify-content-center mx-auto">
             <div class="avatar-wrapper mt-5 ">
                 <img src="img/account-sketch.svg" alt="" class="profile-picture">

@@ -24,8 +24,8 @@
 <body>
     <div class="container-fluid p-0">
         <div class="row w-100 m-0">
-            <div class="col-2 pl-0 h-100">
-                <div class="sidebar-wrapper">
+            <div class="col-2 pl-0">
+                <div class="sidebar-wrapper h-100">
                     <!-- Sidebar -->
                     <nav class="sidebar">
                         <ul class="p-0">
