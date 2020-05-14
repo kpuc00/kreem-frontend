@@ -5,9 +5,9 @@
 @section('page_header', 'My profile')
 
 @section('content')
-<div class="row">
+<div class="row mb-3">
     <div class="col-3 mt-3 p-0">
-        <div class="information-card mb-3 w-100">
+        <div class="information-card mb-3 w-100 h-100">
             <div class="avatar-wrapper pt-3 mx-auto">
                 <img src="img/account-sketch.svg" alt="" class="profile-picture">
             </div>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="col-9 mt-3 p-0">
-        <div class="calendar ml-3 mr-3 mb-3">
+        <div class="calendar ml-3 mr-3 mb-3 h-100">
             <div class="card px-3 py-3">
                 <div class="form-inline">
                     <button class="col-6" id="previous" onclick="previous()"><</button>
