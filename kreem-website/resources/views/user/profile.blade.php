@@ -27,7 +27,7 @@
                 <p class="m-0">Email address</p>
                 <p class="pt-1">{{ $user->personal_email }}</p>
                 <p class="m-0">Phone</p>
-                <p class="pt-1">{{ $user->phone ?? 'no phone submited' }}</p>
+                <p class="pt-1">{{ $user->phone_number ?? 'no phone submited' }}</p>
                 <p class="m-0">Address</p>
                 <p class="pt-1">{{ $user->address ?? 'no address submited' }}</p>
             </div>
