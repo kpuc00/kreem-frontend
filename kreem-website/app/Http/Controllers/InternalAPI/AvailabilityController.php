@@ -54,7 +54,7 @@ class AvailabilityController extends BaseAPIController
 
         try {
             $request_data = $request->validate([
-                'date' => 'required|date',
+                'date' => 'required|date|after:today',
                 'type' => 'required|in:Morning,Noon,Night'
             ]);
             $shift_date = $request_data['date'];
@@ -106,7 +106,7 @@ class AvailabilityController extends BaseAPIController
         return $this->noContent();
    }
 
-   public function callInForShift(int $shift_id, Request $request){
+   public function callInForShift(Shift $shift, Request $request){
 
        try {
            $request_data = $request->validate([
@@ -115,9 +115,13 @@ class AvailabilityController extends BaseAPIController
        }catch (ValidationException $ex){
            return $this->badRequest($ex->errors());
        }
+       if(new DateTime($shift->date) <= new DateTime('today')){
+           return $this->badRequest(['date' => 'Date cannot be in the past']);
+       }
+
 
         $callIn = new CallIn($request_data);
-        $callIn->shift()->associate(new Shift(['id' => $shift_id]));
+        $callIn->shift()->associate($shift);
         $callIn->user()->associate(Auth::user());
 
        try {

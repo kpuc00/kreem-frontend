@@ -37,8 +37,8 @@
         <div class="calendar ml-3 mr-3 mb-3 h-100">
             <div class="card px-3 py-3">
                 <div class="form-inline">
-                    <button class="col-6" id="previous" onclick="previous()"><</button>
-                    <button class="col-6" id="next" onclick="next()">></button>
+                    <button class="col-6" id="previous" onclick="previousCalendarMonth()"><</button>
+                    <button class="col-6" id="next" onclick="nextCalendarMonth()">></button>
                 </div>
                 <h3 class="card-header" id="monthAndYear"></h3>
                 <table class="table table-bordered" id="calendar">
